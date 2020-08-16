@@ -67,7 +67,14 @@ fn main() {
     
     if let Some(matches) = matches.subcommand_matches("add") {
         println!("现在开始迁入新的动物。");
-        println!("{:?}",matches.is_present("type"));
+        println!("{:?}",matches.value_of("type"));
+        // match matches.value_of("type") {
+        //     None => None,
+        //     Some(i) => {
+        //         println!("{:?}",String::from("i"));
+        //         Some(i)
+        //     },
+        // }
         // add子命令执行
         if matches.is_present("type") {
             in_zoo_animal.push(
